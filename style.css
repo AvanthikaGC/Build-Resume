@@ -7,12 +7,14 @@ body {
 }
 
 .resume {
-  width: 800px;
-  margin: 40px auto;
-  padding: 30px 40px;
+  width: 794px; /* A4 width at 96dpi */
+  min-height: 1123px; /* A4 height at 96dpi */
+  margin: 20px auto;
+  padding: 40px 50px;
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 header {
@@ -25,21 +27,26 @@ header {
 .header-left {
   max-width: 70%;
 }
+
 .header-right {
   max-width: 30%;
   text-align: right;
-  padding-right: 10px; /* Add this to move image slightly left */
+  padding-right: 10px;
 }
 
 .profile-pic img {
-  width: 150px;              /* Increased from 120px */
-  height: 150px;             /* Increased from 120px */
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 30%;
   border: 3px solid #ccc;
 }
 
+header i {
+  color: #000000;
+  margin-right: 6px;
+}
 
 header h1 {
   font-size: 32px;
@@ -53,7 +60,7 @@ header p {
 header a {
   display: inline-block;
   margin-top: 8px;
-  color: #0066cc;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -91,4 +98,16 @@ ul {
   background: #f0f0f0;
   padding: 6px 12px;
   border-radius: 5px;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+  .resume {
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    padding: 0;
+  }
 }
